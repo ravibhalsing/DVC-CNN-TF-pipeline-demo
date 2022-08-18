@@ -34,3 +34,282 @@
 [2021-10-11 11:33:25,986: INFO: common]: Directory is created at data/dog
 [2021-10-11 11:33:26,249: INFO: common]: all the files has been copied from ../outside_data/dog to data/dog
 [2021-10-11 11:33:26,250: INFO: stage_01_get_data]: >>>>> stage one completed! all the data are saved in local <<<<<n
+[2022-08-18 14:37:46,437: INFO: stage_01_get_data]: 
+********************
+[2022-08-18 14:37:46,437: INFO: stage_01_get_data]: >>>>> stage one started <<<<<
+[2022-08-18 14:37:46,445: INFO: common]: content from configs/config.yaml read successfully!!
+[2022-08-18 14:37:46,469: INFO: common]: Directory is created at data/cat
+[2022-08-18 14:37:52,125: INFO: common]: all the files has been copied from ../outside_data/cat to data/cat
+[2022-08-18 14:37:52,128: INFO: common]: Directory is created at data/dog
+[2022-08-18 14:37:57,942: INFO: common]: all the files has been copied from ../outside_data/dog to data/dog
+[2022-08-18 14:37:57,942: INFO: stage_01_get_data]: >>>>> stage one completed! all the data are saved in local <<<<<
+
+[2022-08-18 14:59:00,967: INFO: stage_03_prepare_callback]: 
+********************
+[2022-08-18 14:59:00,968: INFO: stage_03_prepare_callback]: >>>>> stage three started <<<<<
+[2022-08-18 14:59:00,969: INFO: common]: content from configs/config.yaml read successfully!!
+[2022-08-18 14:59:00,969: INFO: common]: Directory is created at artifacts\tensorboard_log_dir
+[2022-08-18 14:59:00,970: INFO: common]: Directory is created at artifacts\checkpoints
+[2022-08-18 14:59:00,970: INFO: common]: Directory is created at artifacts\callbacks
+[2022-08-18 14:59:00,981: INFO: callbacks]: tensorboard callback is saved at artifacts\callbacks\tensorboard_cb.cb as binary file
+[2022-08-18 14:59:00,983: INFO: callbacks]: checkpoint callback is saved at artifacts\callbacks\checkpoint_cb.cb as binary file
+[2022-08-18 14:59:00,984: INFO: stage_03_prepare_callback]: >>>>> stage three completed! callbacks are prepared and saved as binary <<<<<n
+[2022-08-18 14:59:04,159: INFO: stage_02_prepare_base_model]: 
+********************
+[2022-08-18 14:59:04,159: INFO: stage_02_prepare_base_model]: >>>>> stage two started <<<<<
+[2022-08-18 14:59:04,161: INFO: common]: content from configs/config.yaml read successfully!!
+[2022-08-18 14:59:04,161: INFO: common]: content from params.yaml read successfully!!
+[2022-08-18 14:59:04,162: INFO: common]: Directory is created at artifacts\base_model
+[2022-08-18 14:59:04,567: INFO: model]: VGG16 base model summary:
+Model: "vgg16"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+=================================================================
+Total params: 14,714,688
+Trainable params: 14,714,688
+Non-trainable params: 0
+_________________________________________________________________
+
+[2022-08-18 14:59:04,567: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2022-08-18 14:59:04,639: INFO: model]: VGG16 base model saved at: artifacts\base_model\base_model.h5
+[2022-08-18 14:59:04,654: INFO: model]: custom model is compiled and ready to be trained
+[2022-08-18 14:59:04,656: INFO: model]: full model summary Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-08-18 14:59:04,753: INFO: stage_02_prepare_base_model]: full untrained model is saved at artifacts\base_model\updated_base_model.h5
+[2022-08-18 14:59:04,753: INFO: stage_02_prepare_base_model]: >>>>> stage two completed! base model is created and saved successfully <<<<<
+
+[2022-08-18 14:59:05,806: INFO: stage_01_get_data]: 
+********************
+[2022-08-18 14:59:05,806: INFO: stage_01_get_data]: >>>>> stage one started <<<<<
+[2022-08-18 14:59:05,807: INFO: common]: content from configs/config.yaml read successfully!!
+[2022-08-18 14:59:05,832: INFO: common]: Directory is created at data/cat
+[2022-08-18 14:59:06,477: INFO: common]: all the files has been copied from ../outside_data/cat to data/cat
+[2022-08-18 14:59:06,478: INFO: common]: Directory is created at data/dog
+[2022-08-18 14:59:07,185: INFO: common]: all the files has been copied from ../outside_data/dog to data/dog
+[2022-08-18 14:59:07,186: INFO: stage_01_get_data]: >>>>> stage one completed! all the data are saved in local <<<<<
+
+[2022-08-18 14:59:26,686: INFO: stage_04_train]: 
+********************
+[2022-08-18 14:59:26,686: INFO: stage_04_train]: >>>>> stage four started <<<<<
+[2022-08-18 14:59:26,688: INFO: common]: content from configs/config.yaml read successfully!!
+[2022-08-18 14:59:26,689: INFO: common]: content from params.yaml read successfully!!
+[2022-08-18 14:59:26,689: INFO: common]: Directory is created at artifacts\model
+[2022-08-18 14:59:26,959: INFO: model]: untrained models is read from: artifacts\base_model\updated_base_model.h5
+[2022-08-18 14:59:26,961: INFO: model]: untrained full model summary: 
+Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-08-18 14:59:26,965: INFO: callbacks]: saved callbacks are loaded and now ready to be used
+[2022-08-18 14:59:27,086: INFO: data_management]: data augmentation is used for training
+[2022-08-18 14:59:27,227: INFO: data_management]: train and valid genrator is created.
+[2022-08-18 15:46:59,590: INFO: stage_03_prepare_callback]: 
+********************
+[2022-08-18 15:46:59,590: INFO: stage_03_prepare_callback]: >>>>> stage three started <<<<<
+[2022-08-18 15:46:59,592: INFO: common]: content from configs/config.yaml read successfully!!
+[2022-08-18 15:46:59,592: INFO: common]: Directory is created at artifacts\tensorboard_log_dir
+[2022-08-18 15:46:59,592: INFO: common]: Directory is created at artifacts\checkpoints
+[2022-08-18 15:46:59,592: INFO: common]: Directory is created at artifacts\callbacks
+[2022-08-18 15:46:59,602: INFO: callbacks]: tensorboard callback is saved at artifacts\callbacks\tensorboard_cb.cb as binary file
+[2022-08-18 15:46:59,606: INFO: callbacks]: checkpoint callback is saved at artifacts\callbacks\checkpoint_cb.cb as binary file
+[2022-08-18 15:46:59,607: INFO: stage_03_prepare_callback]: >>>>> stage three completed! callbacks are prepared and saved as binary <<<<<n
+[2022-08-18 15:47:03,779: INFO: stage_04_train]: 
+********************
+[2022-08-18 15:47:03,779: INFO: stage_04_train]: >>>>> stage four started <<<<<
+[2022-08-18 15:47:03,779: INFO: common]: content from configs/config.yaml read successfully!!
+[2022-08-18 15:47:03,787: INFO: common]: content from params.yaml read successfully!!
+[2022-08-18 15:47:03,787: INFO: common]: Directory is created at artifacts\model
+[2022-08-18 15:47:04,151: INFO: model]: untrained models is read from: artifacts\base_model\updated_base_model.h5
+[2022-08-18 15:47:04,151: INFO: model]: untrained full model summary: 
+Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2022-08-18 15:47:04,151: INFO: callbacks]: saved callbacks are loaded and now ready to be used
+[2022-08-18 15:47:04,268: INFO: data_management]: data augmentation is used for training
+[2022-08-18 15:47:04,385: INFO: data_management]: train and valid genrator is created.
+[2022-08-18 15:54:52,731: INFO: common]: Directory is created at artifacts\model
+[2022-08-18 15:54:52,917: INFO: stage_04_train]: trained models is saved at: 
+artifacts\model\model_at_Thu_Aug_18_15.54.52_2022_.h5
+[2022-08-18 15:54:52,918: INFO: stage_04_train]: >>>>> stage four completed! training completed <<<<<n
